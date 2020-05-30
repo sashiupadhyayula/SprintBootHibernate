@@ -1,0 +1,1 @@
+https://www.journaldev.com/2954/hibernate-query-language-hql-example-tutorial
