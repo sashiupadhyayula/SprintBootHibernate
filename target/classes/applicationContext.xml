@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url">
+			<value>jdbc:oracle:thin:@ldohstxeb004.oracleoutsourcing.com:32910:STXE2T</value>
+		</property>
+		<property name="username" >
+			<value>EBTRANSAC</value>
+		</property>
+		<property name="password" >
+			<value>N30rn8u5k5rs</value>
+		</property>
+		<property name="maxActive" value="50" />
+        <property name="initialSize" value="5" />
+        <property name="minIdle" value="1" />
+        <property name="maxIdle" value="-1" />
+        <property name="maxWait" value="1" />
+        <!-- TRANSACTION_READ_COMMITTED -->
+        <property name="defaultTransactionIsolation" value="2" />
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="hibernate.cfg.xml"></property>
+	</bean>
+</beans>
